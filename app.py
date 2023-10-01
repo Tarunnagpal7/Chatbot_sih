@@ -5,15 +5,15 @@ import openai
 app = Flask(__name__)
 
 # Set up OpenAI API credentials
-openai.api_key = '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'
+openai.api_key = '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'
 
 
 # Define the default route to return the index.html file
 @app.route("/")
 def index():
-    return render_template("index.html")
+    return render_template('index.html')
 
-# Define the /api route to handle POST requests
+# # Define the /api route to handle POST requests
 @app.route("/api", methods=["POST"])
 def api():
     # Get the message from the POST request
@@ -36,3 +36,5 @@ def api():
 
 if __name__=='__main__':
     app.run()
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=8080)
